@@ -1,17 +1,15 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div class="gap">
+    <ScrollComponent v-for="test in 30" :key="test">
+      <div>
+        <h1>Test</h1>
+      </div>
+    </ScrollComponent>
+  </div>
 </template>
 
-<script>
-import HelloWorld from "./components/HelloWorld.vue";
-
-export default {
-  name: "App",
-  components: {
-    HelloWorld,
-  },
-};
+<script setup>
+import ScrollComponent from "./components/ScrollComponent.vue";
 </script>
 
 <style lang="scss">
@@ -22,5 +20,11 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.gap {
+  display: flex;
+  flex-direction: column;
+  gap: 100vh;
 }
 </style>
