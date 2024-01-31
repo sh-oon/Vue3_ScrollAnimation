@@ -3,13 +3,13 @@
 		<ScrollComponent
 			v-for="test in 7"
 			:key="test"
-			:animation="'flip-top'"
+			:animation="test % 2 === 0 ? 'from-left' : 'from-right'"
 			:animationDelay="0"
 			:animationDuration="1000"
 			:animationEasing="'ease'"
 		>
 			<div class="card">
-				<h1>Test</h1>
+				<h1>Card {{ test }}</h1>
 			</div>
 		</ScrollComponent>
 	</div>
@@ -36,5 +36,6 @@ import ScrollComponent from 'zion-scroll-animation';
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	border-radius: 14px;
 }
 </style>

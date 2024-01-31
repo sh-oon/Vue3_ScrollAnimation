@@ -3,7 +3,7 @@ import ScrollComponent from '@/components/ScrollComponent.vue';
 export function install(Vue) {
 	if (install.installed) return;
 	install.installed = true;
-	Vue.component('ScrollComponent', ScrollComponent);
+	Vue.component('scroll-component', ScrollComponent);
 }
 
 const plugin = {

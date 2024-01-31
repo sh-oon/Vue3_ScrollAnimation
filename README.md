@@ -1,26 +1,89 @@
 # Vue3_ScrollAnimation
-Scroll animation component for Vue3
+
+vue3 scroll animation component
+
 # scroll-components
 
-## Project setup
+## Package Install
+
 ```
-npm install
+npm install zion-scroll-animation
 ```
 
-### Compiles and hot-reloads for development
+## Import in project
+
 ```
-npm run serve
+import  ZionScrollAnimation from 'zion-scroll-animation'
 ```
 
-### Compiles and minifies for production
-```
-npm run build
+## Use in project
+
+``` Vue
+<template>
+  <div id="app">
+    <zion-scroll-animation :animation="animation" :duration="duration" :delay="delay" :offset="offset">
+      <div class="box"></div>
+    </zion-scroll-animation>
+  </div>
+</template>
 ```
 
-### Lints and fixes files
-```
-npm run lint
+### Options
+
+| Option            | Type   | Default | Required | Description                                                                                                                                |
+|-------------------|--------|---------|----------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| once              | Bool   | false   | true     | Every intersecting called animation                                                                                                        |
+| animation         | String | 'fade'  | true     | animation name (e.x 'fade','from-left','from-right','from-top','from-bottom', 'flip-top', 'flip-right', 'flip-bottom','flip-left, 'scale', |
+| animationDelay    | Number | 0       | false    | animation duration                                                                                                                         |
+| animationDuration | Number | 1000    | false    | animation duration                                                                                                                         |
+| animationEasing   | String | ease    | false    | animation duration                                                                                                                         |
+
+### Animation
+
+| Animation Name | Description                                                                 |
+|----------------|-----------------------------------------------------------------------------|
+| fade           | fade in                                                                     |
+| from-left      | from left                                                                   |
+| from-right     | from right                                                                  |
+| from-top       | from top                                                                    |
+| from-bottom    | from bottom                                                                 |
+| flip-top       | flip top                                                                    |
+| flip-right     | flip right                                                                  |
+| flip-bottom    | flip bottom                                                                 |
+| flip-left      | flip left                                                                   |
+| scale          | scale                                                                       | |
+
+### Example
+
+``` Vue
+<template>
+  <div id="app">
+    <zion-scroll-animation :animation="animation" :duration="duration" :delay="delay" :offset="offset">
+      <div class="box"></div>
+    </zion-scroll-animation>
+  </div>
+</template>
+   
+<script>
+import  ZionScrollAnimation from 'zion-scroll-animation'
+
+export default {
+  name: 'App',
+  components: {
+    ZionScrollAnimation
+  },
+  data() {
+    return {
+      animation: 'fade',
+      duration: 1000,
+      delay: 0,
+      offset: 0
+    }
+  }
+}
+</script>
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Demo
+
+[Demo](https://zion-ui.github.io/vue3-scroll-animation/)
