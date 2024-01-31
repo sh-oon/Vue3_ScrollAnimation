@@ -161,7 +161,9 @@ onMounted(() => {
 	animationComponent.init(props.threshold, observer);
 });
 </script>
+
 <style lang="scss">
+@import 'src/__keyframes.scss';
 .scroll-component {
 	position: relative;
 	overflow: hidden;

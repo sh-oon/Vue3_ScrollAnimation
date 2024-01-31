@@ -16,8 +16,7 @@
 </template>
 
 <script setup>
-import ScrollComponent from './components/ScrollComponent.vue';
-import './__keyframes.scss';
+import ScrollComponent from 'zion-scroll-animation';
 </script>
 
 <style lang="scss">

@@ -1,15 +1,18 @@
 {
-  "name": "scroll-components",
-  "version": "0.1.0",
-  "private": true,
+  "name": "zion-scroll-animation",
+  "version": "0.1.2",
+  "private": false,
+  "main": "dist/scroll-component.common.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "lib": "vue-cli-service build --target lib --name scroll-component --dest dist src/components/ScrollComponent.vue"
   },
   "dependencies": {
     "core-js": "^3.8.3",
-    "vue": "^3.2.13"
+    "vue": "^3.2.13",
+    "zion-scroll-animation": "^0.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
