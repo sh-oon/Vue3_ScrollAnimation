@@ -1,30 +1,41 @@
 <template>
-  <div class="gap">
-    <ScrollComponent v-for="test in 30" :key="test">
-      <div>
-        <h1>Test</h1>
-      </div>
-    </ScrollComponent>
-  </div>
+	<div class="gap">
+		<ScrollComponent
+			v-for="test in 7"
+			:key="test"
+			:animation="'flip-top'"
+			:animationDelay="0"
+			:animationDuration="1000"
+			:animationEasing="'ease'"
+		>
+			<div class="card">
+				<h1>Test</h1>
+			</div>
+		</ScrollComponent>
+	</div>
 </template>
 
 <script setup>
-import ScrollComponent from "./components/ScrollComponent.vue";
+import ScrollComponent from './components/ScrollComponent.vue';
+import './__keyframes.scss';
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.gap {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 50vh;
 }
 
-.gap {
-  display: flex;
-  flex-direction: column;
-  gap: 100vh;
+.card {
+	width: 300px;
+	height: 300px;
+	background-color: #2c3e50;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 </style>
