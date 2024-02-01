@@ -37,51 +37,38 @@ import  ZionScrollAnimation from 'zion-scroll-animation'
 | animationDelay    | Number | 0       | false    | animation duration                                                                                                                         |
 | animationDuration | Number | 1000    | false    | animation duration                                                                                                                         |
 | animationEasing   | String | ease    | false    | animation duration                                                                                                                         |
+| animationOffset            | Number | 0       | false    | animation offset                                                                                                                          |
 
 ### Animation
 
-| Animation Name | Description                                                                 |
-|----------------|-----------------------------------------------------------------------------|
-| fade           | fade in                                                                     |
-| from-left      | from left                                                                   |
-| from-right     | from right                                                                  |
-| from-top       | from top                                                                    |
-| from-bottom    | from bottom                                                                 |
-| flip-top       | flip top                                                                    |
-| flip-right     | flip right                                                                  |
-| flip-bottom    | flip bottom                                                                 |
-| flip-left      | flip left                                                                   |
-| scale          | scale                                                                       | |
+| Animation Name | Description |
+|----------------|-------------|
+| fade           | fade in     |
+| from-left      | from left   |
+| from-right     | from right  |
+| from-top       | from top    |
+| from-bottom    | from bottom |
+| flip-top       | flip top    |
+| flip-right     | flip right  |
+| flip-bottom    | flip bottom |
+| flip-left      | flip left   |
+| scale          | scale       | |
 
 ### Example
 
 ``` Vue
 <template>
   <div id="app">
-    <zion-scroll-animation :animation="animation" :duration="duration" :delay="delay" :offset="offset">
+    <zion-scroll-animation
+        :animation="animation"
+        :animationDelay="0"
+        :animationDuration="1000"
+        :animationEasing="ease"
+    >
       <div class="box"></div>
     </zion-scroll-animation>
   </div>
 </template>
-   
-<script>
-import  ZionScrollAnimation from 'zion-scroll-animation'
-
-export default {
-  name: 'App',
-  components: {
-    ZionScrollAnimation
-  },
-  data() {
-    return {
-      animation: 'fade',
-      duration: 1000,
-      delay: 0,
-      offset: 0
-    }
-  }
-}
-</script>
 ```
 
 ### Demo

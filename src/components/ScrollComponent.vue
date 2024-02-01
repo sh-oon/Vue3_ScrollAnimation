@@ -7,17 +7,9 @@
 		:data-sa-duration="props.animationDuration"
 		:data-sa-easing="props.animationEasing"
 		:data-sa-offset="props.animationOffset"
-		:data-sa-repeat="props.animationRepeat"
-		:data-sa-repeat-delay="props.animationRepeatDelay"
-		:data-sa-repeat-duration="props.animationRepeatDuration"
-		:data-sa-repeat-easing="props.animationRepeatEasing"
-		:data-sa-repeat-offset="props.animationRepeatOffset"
-		:data-sa-time="props.animationEasing"
 		:data-sa-threshold="props.threshold"
 	>
-		<div class="scroll-component__content">
-			<slot></slot>
-		</div>
+		<slot />
 	</div>
 </template>
 
@@ -64,28 +56,12 @@ const props = defineProps({
 	animationEasing: {
 		type: String,
 		default: 'ease',
+		lowercase: true,
+		validator: value => {
+			return ['ease', 'ease-in', 'ease-out', 'ease-in-out', 'linear', 'step-start', 'step-end'].includes(value);
+		},
 	},
 	animationOffset: {
-		type: Number,
-		default: 0,
-	},
-	animationRepeat: {
-		type: Boolean,
-		default: false,
-	},
-	animationRepeatDelay: {
-		type: Number,
-		default: 0,
-	},
-	animationRepeatDuration: {
-		type: Number,
-		default: 1000,
-	},
-	animationRepeatEasing: {
-		type: String,
-		default: 'ease',
-	},
-	animationRepeatOffset: {
 		type: Number,
 		default: 0,
 	},
@@ -164,6 +140,7 @@ onMounted(() => {
 
 <style lang="scss">
 @import 'src/__keyframes.scss';
+
 .scroll-component {
 	position: relative;
 	overflow: hidden;

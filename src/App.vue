@@ -7,6 +7,7 @@
 			:animationDelay="0"
 			:animationDuration="1000"
 			:animationEasing="'ease'"
+			:animationOffset="0"
 		>
 			<div class="card">
 				<h1>Card {{ test }}</h1>
@@ -16,7 +17,8 @@
 </template>
 
 <script setup>
-import ScrollComponent from 'zion-scroll-animation';
+// import ScrollComponent from 'zion-scroll-animation';
+import ScrollComponent from './components/ScrollComponent.vue';
 </script>
 
 <style lang="scss">
